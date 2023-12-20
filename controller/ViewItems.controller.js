@@ -1,2 +1,0 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("geo.aprobacionlog.controller.ViewItems",{onInit:function(){}})});
-//# sourceMappingURL=ViewItems.controller.js.map
