@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList" />
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation" />
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW_LOG_APROBACION_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+            <EntityType Name="ItemsAprob" sap:semantics="aggregate" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ebeln" />
+                </Key>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Doc.compras" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+                <Property Name="Liberadores" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="30 caracteres" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+                <Property Name="Estadolib" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Campo carácter longitud 12" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+                <Property Name="Fechacreacion" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Modificado el" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+                <Property Name="Fechalib" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Modificado el" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+                <Property Name="Delay" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Modificado el" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="30 caracteres" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+            </EntityType>
+            <EntityType Name="ZCDS_APROB_LOGType" sap:label="Vista CDS - Log de recepción y aproación de OCs" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ebeln" />
+                    <PropertyRef Name="ernam" />
+                    <PropertyRef Name="bedat" />
+                    <PropertyRef Name="matnr" />
+                    <PropertyRef Name="werks" />
+                    <PropertyRef Name="lifnr" />
+                </Key>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="PO" sap:quickinfo="Número del documento de compras" />
+                <Property Name="ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="Creador PO" sap:quickinfo="Usuario de persona que ha creado un documentos de compras" />
+                <Property Name="bedat" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Fecha documento" sap:quickinfo="Fecha del documento de compras" />
+                <Property Name="matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Número de material" />
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro" />
+                <Property Name="lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Proveedor" sap:quickinfo="Número de cuenta del proveedor" />
+            </EntityType>
+            <EntityContainer Name="ZGW_LOG_APROBACION_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ItemsAprobSet" EntityType="ZGW_LOG_APROBACION_SRV.ItemsAprob" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1" />
+                <EntitySet Name="ZCDS_APROB_LOG" EntityType="ZGW_LOG_APROBACION_SRV.ZCDS_APROB_LOGType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" />
+            </EntityContainer>
+            <Annotations Target="ZGW_LOG_APROBACION_SRV.ZGW_LOG_APROBACION_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true" />
+            </Annotations>
+            <Annotations Target="ZGW_LOG_APROBACION_SRV.ZGW_LOG_APROBACION_SRV_Entities/ZCDS_APROB_LOG" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="bedat" />
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://sapts401.melisap.com:8001/sap/opu/odata/sap/ZGW_LOG_APROBACION_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom" />
+            <atom:link rel="latest-version" href="http://sapts401.melisap.com:8001/sap/opu/odata/sap/ZGW_LOG_APROBACION_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom" />
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

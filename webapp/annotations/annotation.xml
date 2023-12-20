@@ -1,0 +1,121 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/ZGW_LOG_APROBACION_SRV/$metadata">
+        <edmx:Include Namespace="ZGW_LOG_APROBACION_SRV" Alias="SAP" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="ZGW_LOG_APROBACION_SRV.ZCDS_APROB_LOGType">
+                <!-- <Annotation Term="UI.Facets">
+            <Collection>
+                <Record Type="UI.ReferenceFacet">
+                    <PropertyValue Property="Label" String="{@i18n>@GeneralInfoFacetLabel}"/>
+                    <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformation" />
+                </Record>
+                <Record Type="UI.CollectionFacet">
+                    <PropertyValue Property="ID" String="Items"/>
+                    <PropertyValue Property="Label" String="{@i18n>@title}"/>
+                    <PropertyValue Property="Facets">
+                        <Collection>
+                            <Record Type="UI.CollectionFacet">
+                            </Record>
+                        </Collection>
+                    </PropertyValue>
+                </Record>
+            </Collection>
+        </Annotation> -->
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Ebeln</PropertyPath>
+                        <PropertyPath>bedat</PropertyPath>
+                        <PropertyPath>matnr</PropertyPath>
+                        <PropertyPath>werks</PropertyPath>
+                        <PropertyPath>lifnr</PropertyPath>
+                        <PropertyPath>ernam</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP.ItemsAprob">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Ebeln" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Liberadores" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Estadolib" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Fechacreacion" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Fechalib" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Delay" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZGW_LOG_APROBACION_SRV.ZCDS_APROB_LOGType/Ebeln">
+                <Annotation Term="Common.Label" String="PO" />
+            </Annotations>
+            <Annotations Target="ZGW_LOG_APROBACION_SRV.ZCDS_APROB_LOGType/lifnr">
+                <Annotation Term="Common.Label" String="Proveedor" />
+            </Annotations>
+            <Annotations Target="ZGW_LOG_APROBACION_SRV.ZCDS_APROB_LOGType/ernam">
+                <Annotation Term="Common.Label" String="Creador PO" />
+            </Annotations>
+            <Annotations Target="ZGW_LOG_APROBACION_SRV.ZCDS_APROB_LOGType/bedat">
+                <Annotation Term="Common.Label" String="Fecha documento" />
+            </Annotations>
+            <Annotations Target="ZGW_LOG_APROBACION_SRV.ZCDS_APROB_LOGType/werks">
+                <Annotation Term="Common.Label" String="Centro" />
+            </Annotations>
+            <Annotations Target="SAP.ItemsAprob/Ebeln">
+                <Annotation Term="Common.Label" String="{i18n>EbelnItem}" />
+            </Annotations>
+            <Annotations Target="SAP.ItemsAprob/Liberadores">
+                <Annotation Term="Common.Label" String="{i18n>Liberadores}" />
+            </Annotations>
+            <Annotations Target="SAP.ItemsAprob/Estadolib">
+                <Annotation Term="Common.Label" String="{i18n>Estadolib}" />
+            </Annotations>
+            <Annotations Target="SAP.ItemsAprob/Fechacreacion">
+                <Annotation Term="Common.Label" String="{i18n>Fechacre}" />
+            </Annotations>
+            <Annotations Target="SAP.ItemsAprob/Fechalib">
+                <Annotation Term="Common.Label" String="{i18n>Fechalib}" />
+            </Annotations>
+            <Annotations Target="SAP.ItemsAprob/Delay">
+                <Annotation Term="Common.Label" String="{i18n>delay}" />
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
